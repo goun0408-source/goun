@@ -43,7 +43,7 @@ with tab1:
         plat_cnt.columns = ["플랫폼","신고수"]
         fig1 = go.Figure(go.Bar(
             x=plat_cnt["플랫폼"], y=plat_cnt["신고수"],
-            marker_color=["#6366f1","#8b5cf6","#a78bfa","#4f46e5","#7c3aed","#818cf8","#c4b5fd"],
+            marker_color=["#0f172a","#334155","#475569","#0f172a","#1e293b","#334155","#94a3b8"],
             text=plat_cnt["신고수"], textposition="outside", textfont=dict(color="#374151"),
         ))
         fig1.update_layout(**PLOTLY_LAYOUT, title=dict(text="📊 플랫폼별 신고 건수", font=dict(color="#1e293b",size=13)),
@@ -87,7 +87,7 @@ with tab2:
     with c4:
         fig4 = go.Figure(go.Histogram(
             x=df["price_ratio"], nbinsx=20,
-            marker=dict(color="rgba(99,102,241,0.75)", line=dict(color="#6366f1",width=1)),
+            marker=dict(color="rgba(99,102,241,0.75)", line=dict(color="#0f172a",width=1)),
         ))
         fig4.add_vline(x=df["price_ratio"].mean(), line=dict(color="#f59e0b",dash="dash"),
                        annotation_text=f"평균 {df['price_ratio'].mean():.2f}×", annotation_font_color="#d97706")

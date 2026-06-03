@@ -230,7 +230,7 @@ if analyze_btn or "result" in st.session_state:
         <div class="success-box">
           <div style="font-size:2.5rem;">✅</div>
           <div class="success-title">신고가 접수되었습니다!</div>
-          <div class="success-sub">신고 내역 페이지에서 확인 가능합니다.<br>공식 신고도 함께 권장합니다 → <a href="{GOVT_URL}" target="_blank" style="color:#4f46e5;">신고 누리집</a></div>
+          <div class="success-sub">신고 내역 페이지에서 확인 가능합니다.<br>공식 신고도 함께 권장합니다 → <a href="{GOVT_URL}" target="_blank" style="color:#0f172a;">신고 누리집</a></div>
         </div>
         """, unsafe_allow_html=True)
         if st.button("➕ 새 매물 분석하기", type="secondary", use_container_width=True):

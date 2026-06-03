@@ -56,6 +56,7 @@ PLOTLY_LAYOUT = dict(
 GLOBAL_CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+/* 팔레트 C — Slate + Amber 미니멀: 구조=slate(#0f172a), 포인트 1색=amber(#f59e0b) */
 
 /* ── 기본 ── */
 *, *::before, *::after {
@@ -114,14 +115,14 @@ header[data-testid="stHeader"] { background: transparent !important; }
 
 /* ── 히어로 배너 ── */
 .hero-wrap {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
     border-radius: 20px;
     padding: 2.5rem 3rem;
     margin-bottom: 2rem;
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(99,102,241,0.3);
+    box-shadow: 0 8px 32px rgba(15,23,42,0.18);
 }
 .hero-wrap::before {
     content: "";
@@ -159,7 +160,7 @@ header[data-testid="stHeader"] { background: transparent !important; }
     padding-top: 1.4rem;
     border-top: 1px solid rgba(255,255,255,0.2);
 }
-.hero-stat-val { font-size: 1.5rem; font-weight: 900; color: white; }
+.hero-stat-val { font-size: 1.5rem; font-weight: 900; color: #fbbf24; }
 .hero-stat-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.7); margin-top: 0.1rem; }
 
 /* ── 섹션 헤더 ── */
@@ -169,7 +170,7 @@ header[data-testid="stHeader"] { background: transparent !important; }
 }
 .sec-num {
     width: 30px; height: 30px; border-radius: 8px;
-    background: #6366f1; color: white;
+    background: #0f172a; color: white;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.82rem; font-weight: 800; flex-shrink: 0;
 }
@@ -186,7 +187,7 @@ header[data-testid="stHeader"] { background: transparent !important; }
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s, border-color 0.2s;
 }
-.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #c7d2fe; }
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #cbd5e1; }
 .card-hd {
     font-size: 0.72rem; font-weight: 700; color: #94a3b8;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -216,7 +217,7 @@ header[data-testid="stHeader"] { background: transparent !important; }
 .kpi-card::after {
     content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
 }
-.kpi-indigo::after { background: linear-gradient(90deg,#6366f1,#818cf8); }
+.kpi-indigo::after { background: linear-gradient(90deg,#0f172a,#334155); }
 .kpi-rose::after   { background: linear-gradient(90deg,#f43f5e,#fb7185); }
 .kpi-emerald::after { background: linear-gradient(90deg,#10b981,#34d399); }
 .kpi-amber::after  { background: linear-gradient(90deg,#f59e0b,#fbbf24); }
@@ -335,19 +336,19 @@ hr { border: none !important; border-top: 1.5px solid #e2e8f0 !important; margin
 
 /* ── 버튼 ── */
 .stButton > button[kind="primary"] {
-    background: linear-gradient(135deg,#4f46e5,#6366f1) !important;
+    background: linear-gradient(135deg,#0f172a,#0f172a) !important;
     border: none !important; color: white !important; font-weight: 700 !important;
     border-radius: 10px !important;
-    box-shadow: 0 4px 14px rgba(99,102,241,0.35) !important;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.18) !important;
     transition: all 0.2s !important;
 }
 .stButton > button[kind="primary"]:hover {
     transform: translateY(-1px) !important;
-    box-shadow: 0 6px 20px rgba(99,102,241,0.5) !important;
+    box-shadow: 0 6px 20px rgba(15,23,42,0.28) !important;
 }
 .stButton > button[kind="secondary"] {
-    background: white !important; border: 1.5px solid #6366f1 !important;
-    color: #4f46e5 !important; font-weight: 700 !important; border-radius: 10px !important;
+    background: white !important; border: 1.5px solid #0f172a !important;
+    color: #0f172a !important; font-weight: 700 !important; border-radius: 10px !important;
 }
 
 /* ── 탭 ── */
@@ -363,8 +364,9 @@ hr { border: none !important; border-top: 1.5px solid #e2e8f0 !important; margin
     padding: 0.4rem 0.9rem !important;
 }
 .stTabs [aria-selected="true"] {
-    background: white !important; color: #4f46e5 !important;
+    background: white !important; color: #b45309 !important;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+    border-bottom: 2px solid #f59e0b !important;
 }
 
 /* ── 입력 필드 ── */
@@ -379,8 +381,8 @@ hr { border: none !important; border-top: 1.5px solid #e2e8f0 !important; margin
 [data-testid="stTextInput"] input:focus,
 [data-testid="stNumberInput"] input:focus,
 [data-testid="stTextArea"] textarea:focus {
-    border-color: #6366f1 !important;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 0 0 3px rgba(245,158,11,0.18) !important;
 }
 [data-testid="stTextInput"] label,
 [data-testid="stNumberInput"] label,
@@ -408,7 +410,7 @@ hr { border: none !important; border-top: 1.5px solid #e2e8f0 !important; margin
     background: #f8fafc; border: 1px solid #e2e8f0;
     border-radius: 10px;
 }
-.ms-title { font-size: 0.68rem; font-weight: 700; color: #6366f1; margin-bottom: 0.4rem; letter-spacing: 0.08em; }
+.ms-title { font-size: 0.68rem; font-weight: 700; color: #0f172a; margin-bottom: 0.4rem; letter-spacing: 0.08em; }
 .ms-row   { display: flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; color: #374151; }
 .dot-ok   { width: 7px; height: 7px; border-radius: 50%; background: #10b981; flex-shrink: 0; }
 .dot-err  { width: 7px; height: 7px; border-radius: 50%; background: #ef4444; flex-shrink: 0; }
@@ -592,7 +594,7 @@ def render_sidebar(model):
     st.sidebar.markdown(f"""
     <div class="sb-logo">
       <div style="display:flex;align-items:center;gap:0.6rem;">
-        <div style="background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:10px;
+        <div style="background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:10px;
                     width:36px;height:36px;display:flex;align-items:center;justify-content:center;
                     font-size:1.1rem;color:white;">🎫</div>
         <div>

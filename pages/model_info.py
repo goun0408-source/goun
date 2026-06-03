@@ -24,9 +24,9 @@ with tab1:
         with st.container(border=True):
             st.markdown('<div class="card-hd">🏗️ ScalpDetector 신경망 구조</div>', unsafe_allow_html=True)
             for name, size, color, note in [
-                ("입력층",   "4개 특징 벡터",                           "#6366f1", "price_ratio · account_age_days · num_listings · keywords"),
-                ("Hidden 1", "32 뉴런 + BatchNorm + ReLU + Dropout(0.3)", "#8b5cf6", "배치 정규화로 학습 안정화, 드롭아웃으로 과적합 방지"),
-                ("Hidden 2", "16 뉴런 + BatchNorm + ReLU + Dropout(0.3)", "#a78bfa", "특징을 압축하여 판별력 있는 표현 학습"),
+                ("입력층",   "4개 특징 벡터",                           "#0f172a", "price_ratio · account_age_days · num_listings · keywords"),
+                ("Hidden 1", "32 뉴런 + BatchNorm + ReLU + Dropout(0.3)", "#334155", "배치 정규화로 학습 안정화, 드롭아웃으로 과적합 방지"),
+                ("Hidden 2", "16 뉴런 + BatchNorm + ReLU + Dropout(0.3)", "#475569", "특징을 압축하여 판별력 있는 표현 학습"),
                 ("출력층",   "1 뉴런 + Sigmoid → 0~1 확률 출력",        "#ef4444", "≥ 0.70 이면 암표 의심으로 판정"),
             ]:
                 st.markdown(f"""
@@ -58,8 +58,8 @@ with tab1:
             for name, desc, color in [
                 ("💸 가격배율",    "판매가÷정가 — 핵심 지표, 높을수록 위험",    "#ef4444"),
                 ("📅 계정 나이",  "가입 후 경과 일수 — 짧을수록 위험",         "#f59e0b"),
-                ("📦 동시매물수", "현재 올린 티켓 개수 — 많을수록 위험",        "#8b5cf6"),
-                ("🔤 의심키워드", "26종 단어 포함 여부(0/1) — 있으면 위험 신호", "#6366f1"),
+                ("📦 동시매물수", "현재 올린 티켓 개수 — 많을수록 위험",        "#334155"),
+                ("🔤 의심키워드", "26종 단어 포함 여부(0/1) — 있으면 위험 신호", "#0f172a"),
             ]:
                 st.markdown(f"""
                 <div style="display:flex;gap:0.6rem;padding:0.45rem 0;border-bottom:1px solid #f1f5f9;">
@@ -111,7 +111,7 @@ with tab3:
                             marker=dict(color="rgba(245,158,11,0.8)",line=dict(color="#d97706",width=1)),
                             text=[f"{v:.0%}" for v in rf_imp], textposition="outside", textfont=dict(color="#374151")))
     fig_fi.add_trace(go.Bar(name="PyTorch NN", x=pt_imp, y=feats, orientation="h",
-                            marker=dict(color="rgba(99,102,241,0.8)",line=dict(color="#4f46e5",width=1)),
+                            marker=dict(color="rgba(15,23,42,0.8)",line=dict(color="#0f172a",width=1)),
                             text=[f"{v:.0%}" for v in pt_imp], textposition="outside", textfont=dict(color="#374151")))
     fig_fi.update_layout(**PLOTLY_LAYOUT, barmode="group",
         xaxis=dict(title="중요도", tickformat=".0%", range=[0,0.72], gridcolor="#e2e8f0"),

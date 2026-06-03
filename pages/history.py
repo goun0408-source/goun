@@ -63,7 +63,7 @@ elif sort_by == "가격배율 ↓":
 if filtered.empty:
     st.markdown('<div class="panel-info">🔍 조건에 맞는 신고가 없습니다.</div>', unsafe_allow_html=True)
 else:
-    st.markdown(f'<div style="font-size:0.82rem;color:#64748b;margin-bottom:0.6rem;">검색 결과 <strong style="color:#4f46e5;">{len(filtered)}</strong>건 (전체 {len(df)}건)</div>', unsafe_allow_html=True)
+    st.markdown(f'<div style="font-size:0.82rem;color:#64748b;margin-bottom:0.6rem;">검색 결과 <strong style="color:#0f172a;">{len(filtered)}</strong>건 (전체 {len(df)}건)</div>', unsafe_allow_html=True)
     display = filtered[["id","reported_at","event_name","platform","seller_id","face_price","sell_price","price_ratio","account_age_days","num_listings","risk_score","report_type"]].copy()
     display["risk_score"]  = (display["risk_score"]*100).round(1).astype(str)+"%"
     display["price_ratio"] = display["price_ratio"].round(2).astype(str)+"배"
@@ -86,7 +86,7 @@ with ch1:
     plat_cnt.columns = ["플랫폼", "신고수"]
     fig_p = go.Figure(go.Bar(
         x=plat_cnt["플랫폼"], y=plat_cnt["신고수"],
-        marker_color=["#6366f1","#8b5cf6","#a78bfa","#4f46e5","#7c3aed","#818cf8","#c4b5fd"],
+        marker_color=["#0f172a","#334155","#475569","#0f172a","#1e293b","#334155","#94a3b8"],
         text=plat_cnt["신고수"], textposition="outside", textfont=dict(color="#374151"),
     ))
     fig_p.update_layout(**PLOTLY_LAYOUT, title=dict(text="플랫폼별 신고 건수", font=dict(color="#1e293b",size=13)),
