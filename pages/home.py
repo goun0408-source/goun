@@ -5,7 +5,7 @@ from utils import GOVT_URL
 st.markdown("""
 <div class="hero-wrap">
   <div class="hero-chip">🎫 ScalpGuard · AI Anti-Scalping Platform</div>
-  <div class="hero-title">암표1를 AI로 탐지하고<br>공식 신고까지 한 번에</div>
+  <div class="hero-title">암표를 AI로 탐지하고<br>공식 신고까지 한 번에</div>
   <div class="hero-sub">
     티켓베이·중고나라·당근마켓 등에서 발견한 의심 매물을 입력하면<br>
     딥러닝이 4가지 신호를 분석해 암표 위험도를 즉시 판별합니다.
