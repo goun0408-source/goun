@@ -58,7 +58,13 @@ shot_*.png
 chk_*.png
 sb_*.png
 fix_*.png
+t_*.png
+live_*.png
 pw_*.py
+
+# ── 별개 프로젝트(이 저장소와 무관, 각자 별도 배포) ──
+hufs_restaurant.py
+jobmate_streamlit.py
 
 # ── Jupyter ──────────────────────────────────────────
 .ipynb_checkpoints/
